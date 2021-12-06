@@ -1,0 +1,2 @@
+# FixSchool
+solves annoyances
