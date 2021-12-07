@@ -1,1 +1,1 @@
-curl 'https://git.io/JDvI3' | powershell iex
+curl https://raw.githubusercontent.com/pipipear/FixSchool/main/Script.ps1 | powershell iex
