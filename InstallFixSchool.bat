@@ -1,4 +1,4 @@
-@echo off
+@echo on
 cls
 echo :
 echo :
@@ -9,8 +9,7 @@ echo =====================================
 echo :
 echo :
 echo :
-powershell $Shr = (New-Object -comObject WScript.Shell).CreateShortcut($Home + '\Desktop\FixSchool.lnk'); $Shr.TargetPath = 'cmd.exe'; $Shr.Arguments = '/c 
-curl https://raw.githubusercontent.com/pipipear/FixSchool/main/Script.ps1 | powershell iex'; $Shr.IconLocation = 'C:\windows\System32\SHELL32.dll, 238'; $Shr.Save(); echo $Shr
+powershell $Shr = (New-Object -comObject WScript.Shell).CreateShortcut($Home + '\Desktop\FixSchool.lnk'); $Shr.TargetPath = 'cmd.exe'; $Shr.Arguments = "'powershell [Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls'; iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/JDvI3'))'"; $Shr.IconLocation = 'C:\windows\System32\SHELL32.dll, 238'; $Shr.Save(); echo $Shr
 echo :
 echo :
 echo :
@@ -20,4 +19,4 @@ echo ==================================
 echo :
 echo :
 echo :
-curl https://raw.githubusercontent.com/pipipear/FixSchool/main/Script.ps1 | powershell iex;
+powershell [Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls'; iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/JDvI3'))
