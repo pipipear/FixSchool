@@ -3,8 +3,8 @@ Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" 
 Remove-Item ([Environment]::GetFolderPath('Startup') + '\*.*')
 
 # Enable dark mode and small taskbar 
-Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
-Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name TaskbarSmallIcons -Value 1
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme" -Value 0
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSmallIcons" -Value 1
 
 # Bypass wallpaper restrictions
 Remove-Item -Recurse -Force ($env:APPDATA + '\Microsoft\Windows\Themes\*') 
@@ -12,3 +12,7 @@ Invoke-WebRequest -Uri "https://i.imgur.com/RzQqHgo.jpeg" -OutFile ($env:APPDATA
 
 # Restart desktop shell
 Stop-Process -ProcessName explorer
+
+# Changes for next login
+Set-ItemProperty -Path "HKCU:\Control\ Panel\Desktop\WindowMetrics" -Name "MinAnimate" -Value 0
+[System.Windows.MessageBox]::Show('logout to apply all changes (optional)')
