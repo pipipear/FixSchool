@@ -8,7 +8,7 @@ Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
 
 # Bypass wallpaper restrictions
 Remove-Item -Recurse -Force ($env:APPDATA + '\Microsoft\Windows\Themes\*') 
-Invoke-WebRequest -Uri "https://uhdwallpapers.org/uploads/converted/21/12/21/flowing-with-the-waves-3840x2160_476945-mm-90.jpg" -OutFile ($env:APPDATA + '\Microsoft\Windows\Themes\TranscodedWallpaper') 
+Invoke-WebRequest -Uri "https://www.smashingmagazine.com/files/wallpapers/mar-21/botanica/nocal/mar-21-botanica-nocal-1920x1440.jpg" -OutFile ($env:APPDATA + '\Microsoft\Windows\Themes\TranscodedWallpaper') 
 
 # Restart desktop shell
 Stop-Process -ProcessName explorer
