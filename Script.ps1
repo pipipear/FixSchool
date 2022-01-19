@@ -8,11 +8,7 @@ Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
 
 # Bypass wallpaper restrictions
 Remove-Item -Recurse -Force ($env:APPDATA + '\Microsoft\Windows\Themes\*') 
-Invoke-WebRequest -Uri "https://i.imgur.com/RzQqHgo.jpeg" -OutFile ($env:APPDATA + '\Microsoft\Windows\Themes\TranscodedWallpaper') 
+Invoke-WebRequest -Uri "https://i.imgur.com/W5eNDkE.jpeg" -OutFile ($env:APPDATA + '\Microsoft\Windows\Themes\TranscodedWallpaper') 
 
 # Restart desktop shell
 Stop-Process -ProcessName explorer
-
-# Changes for next login
-Set-ItemProperty -Path "HKCU:\Control\ Panel\Desktop\WindowMetrics" -Name "MinAnimate" -Value 0
-[System.Windows.MessageBox]::Show('logout to apply all changes (optional)')
